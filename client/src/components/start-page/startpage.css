@@ -1,0 +1,58 @@
+.startpage {
+	display: block;
+}
+
+.startpage-logo {
+	width: 25rem;
+}
+
+.startpage-title {
+	margin-top: 3rem;
+	letter-spacing: 0.2rem;
+	animation: moveInBottom 0.5s ease-out 0.75s;
+	animation-fill-mode: backwards;
+}
+
+.startpage-btn:link,
+.startpage-btn:visited {
+	text-decoration: none;
+	margin-top: 3rem;
+	padding: 1rem 3rem;
+	display: inline-block;
+	border-radius: 10rem;
+	transition: all 0.2s;
+	position: relative;
+	font-size: 1rem;
+}
+
+.startpage-btn:hover {
+	transform: translateY(-0.3rem);
+	box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+}
+
+.startpage-btn:active {
+	transform: translateY(-0.1rem);
+	box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+.startpage-btn-color {
+	background-color: #2d3d8b;
+	color: #fff;
+}
+
+.startpage-btn-animation {
+	animation: moveInBottom 1s ease-out 1s;
+	animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(0.5rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}

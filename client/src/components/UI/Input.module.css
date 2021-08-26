@@ -1,0 +1,13 @@
+.input {
+    border: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 2px 0px;
+    border-radius: 7px;
+   } 
+
+.invalid{   
+    color: red;
+    opacity: 60%;
+}
