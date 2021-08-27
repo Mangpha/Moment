@@ -3,9 +3,13 @@ import classes from './Modal.module.css';
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-const BackDrop = () => {
+const BackDrop = ({loginModalHandler, signUpModalHandler, loginOn, signUpON}) => {
+    const closeModal = (loginOn, signUpON) => {
+        if(loginOn) return loginModalHandler()
+        else if(signUpON) return signUpModalHandler()
+    }
     return (
-        <div className={classes.backdrop}></div>
+        <div onClick={() => closeModal(loginOn, signUpON)} className={classes.backdrop}></div>
     )
 }
 
@@ -18,17 +22,28 @@ const ModalOverlay = ({children}) => {
 
 const portalPlace = document.getElementById("overlay")
 
-const Modal = ({children}) => {
+const Modal = ({children, loginModalHandler, signUpModalHandler, loginOn, signUpON}) => {
     return (
         <>
-            {ReactDOM.createPortal(<BackDrop/>, portalPlace)}
+            {ReactDOM.createPortal(<BackDrop loginModalHandler={loginModalHandler} signUpModalHandler={signUpModalHandler} loginOn={loginOn} signUpON={signUpON}/>, portalPlace)}
             {ReactDOM.createPortal(<ModalOverlay>{children}</ModalOverlay>, portalPlace)}
         </>
     )
 }
 
+BackDrop.propTypes = {
+    loginModalHandler: PropTypes.any,
+    signUpModalHandler: PropTypes.any,
+    loginOn: PropTypes.any,
+    signUpON: PropTypes.any
+}
+
 Modal.propTypes = {
-    children: PropTypes.any
+    children: PropTypes.any,
+    loginModalHandler: PropTypes.any,
+    signUpModalHandler: PropTypes.any,
+    loginOn: PropTypes.any,
+    signUpON: PropTypes.any
 }
 ModalOverlay.propTypes = {
     children: PropTypes.any

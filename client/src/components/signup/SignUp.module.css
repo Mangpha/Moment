@@ -1,0 +1,27 @@
+
+.form{
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    text-align: center;
+} 
+
+.title{
+    text-align: center;
+}
+.input {
+    border: none;
+    margin: 1rm;
+   } 
+
+.invalid{
+    color: red;
+    opacity: 60%;
+}
+
+
+.signup{
+    padding: 2rem, 4rem;
+    border-radius: 10px;
+}

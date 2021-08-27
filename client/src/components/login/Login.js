@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import PropTypes from 'prop-types'
 
 import classes from './Login.module.css'
 import Modal from '../UI/Modal'
@@ -7,7 +8,7 @@ import Button from '../UI/Button'
 import Input from '../UI/Input'
 // import GoogleLoginBtn from './GoogleLoginBtn'
 
-const Login = () => {
+const Login = ({loginModalHandler, loginOn}) => {
     const [enteredEmail, setEnteredEmail] = useState('')
     const [emailIsValid, setEmailIsValid] = useState(true)
     const [enteredPassword, setEnteredPassword] = useState('')
@@ -33,36 +34,28 @@ const Login = () => {
 
     const loginHandler = (event) => {
         event.preventDefault();
-        axios.post('https://api.m0ment.be/users/login', {email: enteredEmail, password: enteredPassword})
+        axios.post('https://api.m0ment.be/users/login', {email: enteredEmail, password: enteredPassword}, { withCredentials: true })
         .then(res => {
             const {data: userData} = res.data;
             setUserInfo(userData);
+            loginModalHandler()
             //모달창 닫아주는게 필요.
+            //accessToken따로 저장은 필요 없음(쿠키로 받음)
         })
     }
 
     return (
-        <Modal>
+        <Modal loginModalHandler={loginModalHandler} loginOn={loginOn}>
             <>
             <form className={classes.form} onSubmit={loginHandler}>
                 <div className={classes.title}>
                     <h1>M.</h1>
-                <h2>Log in</h2>
-                <div>
-                    <Input className={emailIsValid ? '' : `${classes.invalid}`} input={{placeholder:"E-mail",  onChange: emailInputHandler, onBlur:validateEmailHandler, value:enteredEmail}}/>
-                    {/* <input placeholder="E-mail" className={emailIsValid ? '' : classes.invalid}  onChange={emailInputHandler} onBlur={validateEmailHandler} value={enteredEmail}></input> */}
-                </div>
-                <div>
+                    <h2>Log in</h2>
+                    <Input className={emailIsValid ? '' : `${classes.invalid}`} input={{placeholder:"E-mail", type:"text",  onChange: emailInputHandler, onBlur:validateEmailHandler, value:enteredEmail}}/>
                     <Input className={passwordIsValid ? '' : `${classes.invalid}`} input={{placeholder:"Password", type:"password", onChange: passwordInputHandler, onBlur: validatePasswordHandler, value: enteredPassword}} />
-                    {/* <input placeholder="Password" className={passwordIsValid ? '' : classes.invalid}  onChange={passwordInputHandler} onBlur={validatePasswordHandler} value={enteredPassword}></input> */}
-                </div>
-                <div>
                     <Button > Facebook</Button>
-                    
-
                 {/* <GoogleLoginBtn/> */}
-                </div>
-                <Button className={classes.login} btn={{type: "submit"}}> Login</Button>
+                <Button className={classes.login} btn={{type: "submit"}}>Login</Button>
                 </div>
             </form>
             </>
@@ -70,4 +63,8 @@ const Login = () => {
     )
 }
 
+Login.propTypes = {
+    loginModalHandler: PropTypes.any,
+    loginOn: PropTypes.any
+}
 export default Login

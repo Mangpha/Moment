@@ -1,0 +1,46 @@
+.formContainer{
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    flex-direction: column;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: center;
+}
+.textarea{
+    /* position:relative; */
+    resize:vertical;
+    height: 40vh;
+    width: 90%;
+    border: none;
+    padding: 2rem;
+    margin: 0 auto;
+}
+.textarea:focus{
+    outline: none;
+}
+
+.cardInput{
+    width: auto;
+}
+
+.btnContainer{
+    margin: 0 auto;
+	/* padding: 0.5rem 1rem; */
+    /* width: 5rem; */
+}
+
+.writebtn{
+    margin-top: 30px;
+}
+
+/* .boxsizingBorder {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+} */

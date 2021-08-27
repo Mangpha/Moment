@@ -15,9 +15,8 @@
     margin: 1rm;
    } 
 
-.invalid{
-    color: red;
-    opacity: 60%;
+.invalid:not(:focus) {
+    border-bottom: 1px solid red;
 }
 
 

@@ -1,0 +1,48 @@
+.title{
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.pic{
+    width: 20rem; 
+    height: 20rem; 
+    object-fit: cover;
+    border-radius: 3rem;
+}
+
+
+.text{
+    margin-top: 2rem;
+}
+
+.btncontainer{
+    position: absolute;
+    bottom: 2rem;
+    /* margin-top: 2rem; */
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .8s;
+}
+
+.btn:hover{
+    animation: slide-down 2s ease-in-out infinite;
+}
+
+@keyframes slide-down {
+    50% {transform: scale(0.8);}
+    95% {transform: scale(1);}
+    100% {transform: scale(1.01);}
+  }

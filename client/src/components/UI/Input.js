@@ -4,9 +4,11 @@ import classes from './Input.module.css'
 
 const Input = ({children, input, className}) => {
     return (
-        <input className={`${classes.input} ${className}`}  {...input}>
-           {children} 
-        </input>
+        <div className={classes.container}>
+            <input className={`${classes.input} ${className}`}  {...input}>
+            {children} 
+            </input>
+        </div>
     )
 }
 

@@ -1,0 +1,45 @@
+.mainpage {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.mainpage-title {
+	position: absolute;
+	letter-spacing: 0.2rem;
+	left: 50%;
+	margin-top: 6%;
+	transform: translate(-50%);
+}
+
+.mainpage-recent-container {
+	/* border: 1px solid black; */
+	width: 80rem;
+	height: 40rem;
+	margin: 0 auto;
+	margin-top: 180px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.mainpage-recent-item {
+	margin: 10px;
+	width: 20%;
+	height: 600px;
+	/* border: 1px solid grey;
+	border-radius: 10px; */
+	position: relative;
+}
+
+.mainpage-recent-item:hover {
+	cursor: pointer;
+}
+
+.mainpage-recent-image {
+	position: absolute;
+	padding: 10px;
+	width: 250px;
+}

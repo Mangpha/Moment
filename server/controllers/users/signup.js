@@ -16,8 +16,10 @@ module.exports = async (req, res) => {
   } else {
     await Users.create({
       email: req.body.email,
-      password: req.body.password,
       nickname: req.body.nickname,
+      password: req.body.password,
+      created_at: new Date(),
+      updated_at: new Date(),
     });
     res.status(200).json({ isSignup: true });
   }
