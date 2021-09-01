@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
 	if (!accessToken) {
 		res.status(401).send({ isDel: false });
 	} else {
-		const findPost = await Posts.findOne({ where: { id: post_id } });
+		const findPost = await Posts.findByPk(post_id);
 		if (!findPost) res.status(404).send({ isDel: false });
 		else {
 			const checkUser = isAuthorized(accessToken);

@@ -4,5 +4,8 @@ module.exports = {
 	delete: require('./delete'),
 	detail: require('./detail'),
 	like: require('./like'),
-	recent: require('./recent')
+	recent: require('./recent'),
+	myPost: require('./myPost'),
+	myPostDetail: require('./myPostDetail'),
+	userIsLike: require('./userIsLike'),
 };

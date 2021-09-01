@@ -20,7 +20,7 @@
 	height: 15px;
 	background: #2d3d8b;
 	border-radius: 50%;
-	animation: bouncer 0.5s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
+	animation: bouncer 0.7s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
 	transition: ease-in-out;
 }
 

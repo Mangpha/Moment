@@ -5,4 +5,5 @@ module.exports = {
 	profile: require('./profile'),
 	fixProfile: require('./fixMyProfile'),
 	facebook: require('./facebook'),
+	google: require('./google'),
 };

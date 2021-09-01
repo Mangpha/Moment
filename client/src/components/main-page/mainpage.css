@@ -55,12 +55,31 @@
 
 .mainpage-recent-container {
 	/* border: 1px solid black; */
-
 	margin: 0 auto;
 	margin-top: 150px;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
+}
+
+.mainpage-recent-btn-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.recent-btn {
+	margin-top: 40px;
+	font-size: 20px;
+	background-color: white;
+	border: 3px solid #7fbbca;
+	border-radius: 50px;
+	text-align: center;
+	transition: 0.4s;
+	animation: ease-in-out;
+}
+
+.recent-btn:hover {
+	border: 3px solid #2d3d8b;
 }

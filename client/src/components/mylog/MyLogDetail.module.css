@@ -1,0 +1,167 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.middle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.contains {
+	width: 795px;
+	height: 700px;
+}
+
+.front,
+.back {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.header__container {
+	width: 795px;
+	height: 350px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+.header__container img {
+	width: 100%;
+	height: 100%;
+}
+.userInfo__container {
+	margin-top: 2em;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 25px;
+}
+.userPicName {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+.userPicName .pic {
+	box-shadow: 0px 0px 10px -5px;
+	border-radius: 10rem;
+}
+.userPicName span {
+	font-weight: 600;
+}
+.text__container {
+	display: flex;
+	/* justify-content: flex-end; */
+	flex-direction: column;
+	gap: 20px;
+	opacity: 60%;
+}
+.edit {
+	display: flex;
+	gap: 10px;
+	cursor: pointer;
+}
+.content__container {
+	width: 100%;
+	height: 100%px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	/* align-items: center; */
+	padding: 20px;
+	margin-top: 30px;
+}
+
+.body__container {
+	margin-top: 20px;
+	line-height: 200%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+}
+.like__container {
+	margin-top: 40px;
+	width: 795px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: flex-end;
+	align-items: flex-end;
+	margin-left: -40px;
+}
+.heart {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	border: 0;
+	outline: none;
+	background: transparent;
+	transition: 0.2s ease-in;
+	gap: 10px;
+}
+
+.heart:hover {
+	transform: scale(1.2);
+	color: #ff5093;
+}
+.heart:active {
+	border: 0;
+	outline: 0;
+	background: transparent;
+	transform: scale(2);
+	color: #ff5093;
+}
+
+.heart__clicked {
+	border: 0;
+	outline: 0;
+	background: transparent;
+	transform: scale(1.2);
+	color: #ff5093;
+}
+
+.likeNum {
+	font-size: 15px;
+}
+.backbtn {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 5px 10px;
+	height: 30px;
+}
+.backbtn button {
+	display: inline-flex;
+	flex-direction: row;
+	margin-right: -15px;
+	justify-content: center;
+	align-items: center;
+	padding: 0.3rem;
+	background-color: white;
+	border: 3px solid #7fbbca;
+	border-radius: 20px;
+	text-align: center;
+	transition: 0.4s;
+	animation: ease-in-out;
+}
+.backbtn button:hover {
+	border: 3px solid #2d3d8b;
+	cursor: pointer;
+	/* transform: translateY(-0.3rem);
+	box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3); */
+}
+.backbtn:hover {
+	cursor: pointer;
+	transform: translateY(-0.3rem);
+	/* box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3); */
+}

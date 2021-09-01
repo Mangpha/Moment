@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    top: -100px;
+    width: 100%;
+    height: 110%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalwrapper {
+    width: 800px;
+    height: 500px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    color: #000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    z-index: 10;
+    animation: animate 0.8s ease-in-out;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-60%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.modalimage {
+    width: 100%;
+    height: 100%;
+}
+
+.modalcontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+    line-height: 1.8;
+    color: #141414;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.btn-recent {
+    padding: 15px 15px;
+    background: #2d3d8b;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+}
+.btn-recent:active{
+    transform: scale(0.98);
+}
+.inputwrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.options {
+    display: flex;
+    flex-direction: row;
+}
+
+.join {
+    margin: 5px;
+    margin-top: 20px;
+}
+
+.modalclosebutton {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    z-index: 10;
+}
+
+input {
+    width: auto;
+    border: none;
+    margin: 1rem;
+    background-color: transparent;
+    border-bottom: 1px solid #e8e8e8;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 1px solid #2d3d8b;
+}
+
+.invalid:not(:focus) {
+    border-bottom: 1px solid red;
+}
+

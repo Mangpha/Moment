@@ -1,0 +1,80 @@
+.details-container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+}
+
+.details-inner-container {
+	display: flex;
+	flex-direction: column;
+	max-width: 80%;
+}
+
+.details-header {
+	margin: 0;
+	color: #2d3d8b;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.details-subheader {
+	margin: 10px 0;
+	color: #000;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.details-text {
+	/* font: inherit;
+	font-family: 'IBMPlexSansKR-ExtraLight'; */
+	color: #000;
+	font-weight: 200;
+	width: 216px;
+	height: 96px;
+	font-size: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/* background-color: red; */
+}
+
+.recent-card-liked {
+	margin-right: 200px;
+	cursor: pointer;
+	border: 0;
+	outline: 0;
+	margin-top: 10px;
+	background: transparent;
+	transition: 0.2s ease-in;
+}
+
+.recent-card-liked:hover {
+	cursor: pointer;
+	margin-top: 10px;
+	transform: scale(1.4);
+	color: #ff5093;
+}
+
+.recent-card-liked-click {
+	margin-right: 200px;
+	border: 0;
+	outline: 0;
+	margin-top: 10px;
+	background: transparent;
+	transform: scale(1.4);
+	color: #ff5093;
+	cursor: pointer;
+}
+
+.details-options {
+	margin-left: 4px;
+	z-index: 999;
+}
+
+.detail-count {
+	margin-top: 7px;
+	font-weight: 200;
+	font-size: small;
+}

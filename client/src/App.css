@@ -1,8 +1,23 @@
 * {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Font Awesome 5 Free';
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'Raleway', sans-serif;
+	src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+	unicode-range: U+0020-007E;
+}
+
+@font-face {
+	font-family: 'IBMPlexSansKR-ExtraLight';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-ExtraLight.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	unicode-range: U+AC00-D7A3;
 }
 
 body::-webkit-scrollbar {

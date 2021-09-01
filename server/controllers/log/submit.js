@@ -24,8 +24,8 @@ module.exports = async (req, res) => {
 					content,
 					secret,
 					user_id: searchUser.id,
-					createdAt: new Date() + 9,
-					updatedAt: new Date() + 9,
+					createdAt: new Date(),
+					updatedAt: new Date(),
 				};
 				console.log(payload);
 				await Posts.create({

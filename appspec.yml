@@ -2,18 +2,18 @@ version: 0.0
 os: linux
 files:
     - source: /
-      destination: /home/ubuntu/Moment/
+      destination: /home/ubuntu/Moment
 
 hooks:
     ApplicationStop:
         - location: scripts/stop.sh
-          runas: ubuntu
+          runas: root
           timeout: 300
     AfterInstall:
         - location: scripts/initialize.sh
-          runas: ubuntu
+          runas: root
           timeout: 300
     ApplicationStart:
         - location: scripts/start.sh
-          runas: ubuntu
+          runas: root
           timeout: 300

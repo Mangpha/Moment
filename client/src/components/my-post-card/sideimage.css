@@ -1,0 +1,15 @@
+.side-image-container {
+	max-width: 55%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	position: relative;
+	clip-path: polygon(0 0, 100% 0%, 100% 100%, 17% 100%);
+}
+
+.side-image {
+	background-size: cover;
+	width: 40rem;
+	height: 20rem;
+}

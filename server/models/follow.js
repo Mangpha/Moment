@@ -9,8 +9,6 @@ module.exports = (sequelize, DataTypes) => {
 		 */
 		static associate(models) {
 			// define association here
-			models.follow.belongsTo(models.Users, { foreignKey: 'follower' });
-			models.follow.belongsTo(models.Users, { foreignKey: 'followee' });
 		}
 	}
 	follow.init(

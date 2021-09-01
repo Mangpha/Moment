@@ -9,16 +9,16 @@ module.exports = (sequelize, DataTypes) => {
 		 */
 		static associate(models) {
 			// define association here
-			models.Users.hasMany(models.Posts);
-			models.Users.hasMany(models.post_like);
-			models.Users.hasMany(models.follow);
-			models.Users.hasMany(models.follow);
-			models.Users.hasMany(models.Comment);
+			models.Users.hasMany(models.Posts, { foreignKey: 'user_id' });
+			models.Users.hasOne(models.post_like, { foreignKey: 'user_id' });
+			models.Users.hasMany(models.Comment, { foreignKey: 'comment_userid' });
+			models.Users.belongsToMany(models.Users, { foreignKey: 'followee', through: 'follows', as: 'followee' });
+			models.Users.belongsToMany(models.Users, { foreignKey: 'follower', through: 'follows', as: 'follower' });
 		}
 	}
 	Users.init(
 		{
-			avatar: DataTypes.BLOB,
+			avatar: DataTypes.STRING,
 			email: DataTypes.STRING,
 			nickname: DataTypes.STRING,
 			password: DataTypes.STRING,

@@ -1,26 +1,32 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-
 import HomePage from '../src/components/pages/homepage';
 import Header from '../src/components/header/header';
-import Login from './components/login/Login';
 import WriteLog from './components/log/WriteLog';
 import Mypage from './components/mypage/Mypage';
 import MypageDetail from './components/mypage/MypageDetail';
 import MainPage from '../src/components/main-page/mainpage';
-import ModalBtn from '../src/components/modal-demo/modal-btn';
+import PostCard from '../src/components/post-card/postcard';
+import Modal from './components/modal/Modal';
+import LogDetail from './components/log/LogDetail';
+import MyLogDetail from './components/mylog/MyLogDetail';
+import RecentPage from '../src/components/pages/recentpage';
+import axios from 'axios';
+import MyPostPage from './components/pages/MyPostPage';
+import { Context } from './Context';
+import { Cookies } from 'react-cookie';
 
 function App() {
-	const [userInfo, setUserInfo] = useState('');
+	const { isLoginOpen, login } = useContext(Context);
+	const cookies = new Cookies();
+	useEffect(() => {
+		console.log(cookies.get('accessToken'));
+	});
 
-	const getUserInfo = data => {
-		setUserInfo(data);
-		console.log('userInfo at App :', userInfo);
-	};
 	return (
 		<div>
-			<Header getUserInfo={getUserInfo} />
+			<Header />
 			<Switch>
 				<Route exact path="/">
 					<HomePage />
@@ -28,17 +34,24 @@ function App() {
 				<Route exact path="/main">
 					<MainPage />
 				</Route>
-				<Route path="/log">
-					<WriteLog />
+				<Route exact path="/log">
+					{login && !isLoginOpen ? <WriteLog /> : <Modal />}
 				</Route>
-				<Route path="/myprofile">
-					<Mypage />
+				<Route exact path="/myprofile">
+					{login && !isLoginOpen ? <Mypage /> : <Modal />}
 				</Route>
-				<Route path="/fixprofile">
-					<MypageDetail />
+				<Route path="/fixprofile">{login && !isLoginOpen ? <MypageDetail /> : <Modal />}</Route>
+				<Route path="/log/detail">
+					<LogDetail />
 				</Route>
-				<Route path="/test">
-					<ModalBtn />
+				<Route path="/log/mydetail">
+					<MyLogDetail />
+				</Route>
+				<Route path="/main/recent">
+					<RecentPage />
+				</Route>
+				<Route path="/myprofile/mypost">
+					<MyPostPage />
 				</Route>
 			</Switch>
 		</div>

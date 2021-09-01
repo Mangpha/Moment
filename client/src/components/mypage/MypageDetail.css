@@ -1,0 +1,84 @@
+.my-page-info-container {
+	margin: 0 auto;
+	height: 700px;
+	width: 500px;
+	background-color: transparent;
+	margin-top: 4%;
+	box-shadow: 0px 0px 10px -5px;
+	padding: 3rem;
+}
+
+.my-page-info-title {
+	text-align: center;
+}
+
+.my-page-info-ipt-container {
+	margin: 25px 95px 0;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.my-page-info-ipt {
+	margin-bottom: 20px;
+	padding: 3px;
+}
+
+.my-page-info-ipt-invalid {
+	margin-bottom: 20px;
+	padding: 3px;
+	border-bottom: 1px solid rgb(250, 134, 125);
+}
+
+.my-page-info-password-err {
+	height: 11px;
+	width: 402px;
+	position: fixed;
+	text-align: center;
+	margin: 10px auto 0;
+	font-size: 10px;
+	color: rgb(250, 134, 125);
+}
+
+.my-page-info-password-noerr {
+	display: none;
+}
+
+.my-page-info-imgcontainer {
+	margin: 55px auto 0;
+	width: 250px;
+	height: 120px;
+}
+
+.my-page-info-btn-container {
+	text-align: center;
+	margin-top: 60px;
+}
+
+.my-page-info-btn:link,
+.my-page-info-btn:hover {
+	background-color: #2d3d8b;
+	cursor: pointer;
+	transform: translateY(-0.3rem);
+	box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+}
+
+.my-page-info-btn:active {
+	transform: scale(0.98);
+	box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+.my-page-info-btn {
+	font: inherit;
+	transition: all 0.2s;
+	text-align: center;
+	display: inline-flex;
+	align-items: center;
+	background-color: #2d3d8b;
+	color: #fff;
+	padding: 0.5rem 2rem;
+	margin: 0.5rem;
+	border-radius: 10rem;
+	border: 1px solid transparent;
+	box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 2px 0px;
+}
