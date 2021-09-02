@@ -20,17 +20,24 @@ const LogDetail = () => {
 	useEffect(() => {
 		getRandomPic();
 		getPostsHandler();
+		likeCheckHandler();
 	}, []);
-
+	let test = 1;
 	const likeHandler = async () => {
-		const res = await axios.get(`${ENDPOINT}/log/like/${postId}`, { withCredentials: true });
-		console.log(res);
-		if (!heartClicked) {
-			setHeartClicked(!heartClicked);
-			setNumOfLike(prevState => prevState + 1);
-		} else {
-			setHeartClicked(!heartClicked);
-			setNumOfLike(prevState => prevState - 1);
+		if (test <= 0) test++;
+		else {
+			test--;
+			const res = await axios.get(`${ENDPOINT}/log/like/${postId}`, { withCredentials: true });
+			if (res) {
+				if (!heartClicked) {
+					setHeartClicked(!heartClicked);
+					setNumOfLike(prevState => prevState + 1);
+				} else {
+					setHeartClicked(!heartClicked);
+					setNumOfLike(prevState => prevState - 1);
+				}
+			}
+			test++;
 		}
 	};
 	const getRandomPic = () => {
@@ -43,6 +50,11 @@ const LogDetail = () => {
 		console.log(res);
 		setPost(res.data.data);
 		setNumOfLike(res.data.data.like_count);
+	};
+	const likeCheckHandler = async () => {
+		const res = await axios.get(`${ENDPOINT}/log/userIsLike/${postId}`, { withCredentials: true });
+		console.log(res.data.userLikePost);
+		if (res.data.userLikePost) setHeartClicked(res.data.userLikePost);
 	};
 	const editHandler = async () => {
 		setEditModeOn(!editModeOn);
